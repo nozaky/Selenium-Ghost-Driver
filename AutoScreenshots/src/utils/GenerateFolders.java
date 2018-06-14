@@ -6,7 +6,7 @@ public class GenerateFolders {
 
 	
 	public static void createFolders() {
-		File patherPath = new File("C:/WorkspaceSandUK/Screenshots");
+		File patherPath = new File(PropertiesManager.screenshotsFolder);
 		if (!patherPath.exists()) {
 			patherPath.mkdir();
 		}

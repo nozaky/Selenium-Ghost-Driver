@@ -21,12 +21,12 @@ public class CreateScreenshot {
 		try {
 			GenerateFolders.createFolders();
 			Browser b = new Browser();
-			driver = b.setBrowser("IE");
+			driver = b.setBrowser(PropertiesManager.browser);
 			driver.get(properties.url);
 			MainFunctions m = new MainFunctions(driver);
 //			m.waitAndClick(txt);
 			m.overwrite(txt, "Hello");
-			b.takeScreenshot(driver,"IE-visible");
+			b.takeScreenshot(driver,"firefox-invisible2");
 			
 			
 		} catch (Exception e) {

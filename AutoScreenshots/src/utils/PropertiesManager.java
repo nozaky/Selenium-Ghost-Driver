@@ -12,7 +12,9 @@ public class PropertiesManager {
 	public static String	url,
 							user,
 							pass,
-							drivers;
+							drivers,
+							screenshotsFolder,
+							browser;
 	
 	/**
 	 * Constructor
@@ -35,6 +37,8 @@ public class PropertiesManager {
 			user = p.getProperty("USER");
 			pass = p.getProperty("PASS");
 			drivers = p.getProperty("DRIVERS");
+			screenshotsFolder = p.getProperty("SCREENSHOTS-PATH");
+			browser = p.getProperty("BROWSER");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

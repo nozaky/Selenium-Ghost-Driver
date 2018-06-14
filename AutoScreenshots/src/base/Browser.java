@@ -101,8 +101,11 @@ public class Browser {
 	 */
 	public void takeScreenshot(WebDriver driver,String nameIMG){
 	    try {
+	    	//Take screenshot of the driver
 	    	File from = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	    	File to = new File("C:/WorkspaceSandUK/Screenshots/"+nameIMG+".png");
+	    	//Create file on ScreenshotPath with name that we send by variable
+	    	File to = new File(PropertiesManager.screenshotsFolder+"/"+nameIMG+".png");
+	    	//screenshot copied on Folder
 			FileHandler.copy(from, to);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
