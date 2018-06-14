@@ -11,7 +11,8 @@ public class PropertiesManager {
 	//Var to get Data
 	public static String	url,
 							user,
-							pass;
+							pass,
+							drivers;
 	
 	/**
 	 * Constructor
@@ -33,6 +34,7 @@ public class PropertiesManager {
 			url = p.getProperty("URL");
 			user = p.getProperty("USER");
 			pass = p.getProperty("PASS");
+			drivers = p.getProperty("DRIVERS");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
