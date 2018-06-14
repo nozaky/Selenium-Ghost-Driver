@@ -17,18 +17,19 @@ public class CreateScreenshot {
 		
 //		String url = properties.url.toString();
 		WebDriver driver = null;
-		System.out.println(properties.url);
+//		System.out.println(properties.url);
 		try {
 			GenerateFolders.createFolders();
 			Browser b = new Browser();
 			driver = b.setBrowser(PropertiesManager.browser);
-			driver.get(properties.url);
+			driver.get("https://google.es/");
 			MainFunctions m = new MainFunctions(driver);
 //			m.waitAndClick(txt);
 			m.overwrite(txt, "Hello");
-			b.takeScreenshot(driver,"firefox-invisible2");
-			
-			
+			b.takeScreenshot(driver,"other");
+			m.logReport("ERROR", "Element not clickable");
+			m.logReport("ERROR", "Element not clickable 2");
+			m.logReport("ERROR", "Element not clickable 3");
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {

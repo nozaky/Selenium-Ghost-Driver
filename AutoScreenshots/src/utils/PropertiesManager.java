@@ -9,7 +9,8 @@ import java.util.Properties;
 public class PropertiesManager {
 
 	//Var to get Data
-	public static String	url,
+	public static String	urlProspect,
+							urlCustomer,
 							user,
 							pass,
 							drivers,
@@ -33,7 +34,8 @@ public class PropertiesManager {
 			input = new FileInputStream("config.properties");
 			p.load(input);
 			
-			url = p.getProperty("URL");
+			urlProspect = p.getProperty("URL-PROSPECT");
+			urlCustomer = p.getProperty("URL-CUSTOMER");
 			user = p.getProperty("USER");
 			pass = p.getProperty("PASS");
 			drivers = p.getProperty("DRIVERS");
