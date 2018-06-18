@@ -28,7 +28,7 @@ public class MainFunctions {
 	public void waitAndClick(By element) {
 		try {
 			System.out.println("Searching for element: "+element.toString());
-			wait.until(ExpectedConditions.elementToBeClickable(element));
+//			wait.until(ExpectedConditions.elementToBeClickable(element));
 			System.out.println("Element located");
 			driver.findElement(element).click();			
 		} catch (Exception e) {

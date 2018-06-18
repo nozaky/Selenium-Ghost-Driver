@@ -7,14 +7,20 @@ import base.Browser;
 import base.MainFunctions;
 import utils.GenerateFolders;
 import utils.PropertiesManager;
+import utils.ReadDataFile;
 
 public class CreateScreenshot {
 
 	public static void main(String[] args) {
 		//Initialize properties variables
 		PropertiesManager properties = new PropertiesManager();
-		By txt = By.id("lst-ib");
-		
+		ReadDataFile rdf = new ReadDataFile();
+		String [] data = rdf.readFile();
+		for (int i = 0; i < data.length; i++) {
+			System.out.println("Data --> "+data[i]);
+		}
+		By lblSearch = By.id("lst-ib");
+
 //		String url = properties.url.toString();
 		WebDriver driver = null;
 //		System.out.println(properties.url);
@@ -22,11 +28,11 @@ public class CreateScreenshot {
 			GenerateFolders.createFolders();
 			Browser b = new Browser();
 			driver = b.setBrowser(PropertiesManager.browser);
-			driver.get("https://google.es/");
+			driver.get(PropertiesManager.urlCustomer);
 			MainFunctions m = new MainFunctions(driver);
-//			m.waitAndClick(txt);
-			m.overwrite(txt, "Hello");
-			b.takeScreenshot(driver,"other");
+//			m.waitAndClick(lblSearch);
+			m.overwrite(lblSearch, "Hola");
+			b.takeScreenshot(driver,"Captura-1");
 			m.logReport("ERROR", "Element not clickable");
 			m.logReport("ERROR", "Element not clickable 2");
 			m.logReport("ERROR", "Element not clickable 3");

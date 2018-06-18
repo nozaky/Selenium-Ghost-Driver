@@ -15,7 +15,8 @@ public class PropertiesManager {
 							pass,
 							drivers,
 							screenshotsFolder,
-							browser;
+							browser,
+							dataFile;
 	
 	/**
 	 * Constructor
@@ -41,6 +42,7 @@ public class PropertiesManager {
 			drivers = p.getProperty("DRIVERS");
 			screenshotsFolder = p.getProperty("SCREENSHOTS-PATH");
 			browser = p.getProperty("BROWSER");
+			dataFile = p.getProperty("DATAFILE");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
